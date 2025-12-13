@@ -7,11 +7,11 @@
 <div align="center">
 <img 
   src="https://img.shields.io/badge/Status-Wartungsarbeiten-orange?style=flat&logo=wrench&logoColor=white&labelColor=grey" 
-  alt="Status: Wartungsarbeiten" 
+  alt="Status: Stable" 
   style="border-radius:20px;" />
 
 <img 
-  src="https://img.shields.io/badge/mmade%20by%20dxnis.cutz-8A2BE2" 
-  alt="Made by: dxnis.cutz" 
+  src="https://img.shields.io/badge/made%20by%20dxnis.cutz-8A2BE2" 
+  alt="Made with 💖 by: dxnis-modz" 
   style="border-radius:20px;" />
 </div>
