@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergency Kiel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Banner -->
+<div class="banner">
+    <img src="/Emergency Kiel/Images/EK_Lang.png" alt="Banner">
+</div>
+
+<!-- Tabs -->
+<div class="tabs">
+    <button class="tab-button active" onclick="openTab('news', event)">
+        <i class="fas fa-newspaper"></i> News
+    </button>
+    <button class="tab-button" onclick="openTab('games', event)">
+        <i class="fas fa-gamepad"></i> Games
+    </button>
+    <button class="tab-button" onclick="openTab('team', event)">
+        <i class="fas fa-users"></i> Team
+    </button>
+</div>
+
+<!-- News -->
+<section id="news">
+    <h2><i class="fas fa-newspaper"></i> News & Updates</h2>
+    <div class="news-scroll" id="news-container"></div>
+</section>
+
+<!-- Games -->
+<section id="games" style="display:none;">
+    <h2><i class="fas fa-gamepad"></i> Game Links</h2>
+    <div class="game-links">
+        <a class="game-card" href="https://www.roblox.com/de/games/139102394386024" target="_blank">
+            Emergency Kiel Hangout
+        </a>
+        <a class="game-card" href="https://discord.gg/ZPM6dqM3Pm" target="_blank">
+            Emergency Kiel (Check Discord)
+        </a>
+    </div>
+</section>
+
+<!-- Team -->
+<section id="team" style="display:none;">
+    <h2><i class="fas fa-users"></i> Unser Team</h2>
+    <div class="team-container">
+        <!-- Owner -->
+        <div class="team-member">
+            <div class="avatar red">C</div>
+            <p>Cen</p>
+            <p class="team-role">Owner</p>
+        </div>
+
+        <!-- Manager -->
+        <div class="team-member">
+            <div class="avatar gold">D</div>
+            <p>Denis</p>
+            <p class="team-role">Manager</p>
+        </div>
+        <div class="team-member">
+            <div class="avatar orange">J</div>
+            <p>Jannik</p>
+            <p class="team-role">Manager</p>
+        </div>
+        <div class="team-member">
+            <div class="avatar yellow">JB</div>
+            <p>JayBee</p>
+            <p class="team-role">Manager</p>
+        </div>
+
+        <!-- Lead Dev -->
+        <div class="team-member">
+            <div class="avatar green">J</div>
+            <p>Jannis</p>
+            <p class="team-role">Lead Dev</p>
+        </div>
+
+        <!-- Senior Dev -->
+        <div class="team-member">
+            <div class="avatar blue">W</div>
+            <p>Welox</p>
+            <p class="team-role">Senior Dev</p>
+        </div>
+
+        <!-- Developer -->
+        <div class="team-member">
+            <div class="avatar purple">J</div>
+            <p>Jay</p>
+            <p class="team-role">Developer</p>
+        </div>
+
+        <!-- Senior Mod -->
+        <div class="team-member">
+            <div class="avatar teal">J</div>
+            <p>Jack</p>
+            <p class="team-role">Senior Mod</p>
+        </div>
+
+        <!-- Moderators -->
+        <div class="team-member">
+            <div class="avatar gray">P</div>
+            <p>Poke</p>
+            <p class="team-role">Moderator</p>
+        </div>
+        <div class="team-member">
+            <div class="avatar dark">L</div>
+            <p>Linus</p>
+            <p class="team-role">Moderator</p>
+        </div>
+        <div class="team-member">
+            <div class="avatar purple">L</div>
+            <p>Lennox</p>
+            <p class="team-role">Moderator</p>
+        </div>
+        <div class="team-member">
+            <div class="avatar gold">A</div>
+            <p>Adriano</p>
+            <p class="team-role">Moderator</p>
+        </div>
+        <div class="team-member">
+            <div class="avatar red">E</div>
+            <p>Epicknight</p>
+            <p class="team-role">Moderator</p>
+        </div>
+        <div class="team-member">
+            <div class="avatar red">F</div>
+            <p>Fake_KLR</p>
+            <p class="team-role">Moderator</p>
+        </div>
+    </div>
+</section>
+
+<script>
+/* ===== Tabs ===== */
+function openTab(tab, event) {
+    ['news','games','team'].forEach(t => {
+        document.getElementById(t).style.display = t === tab ? 'block' : 'none';
+    });
+    document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+}
+
+/* ===== NEWS HIER BEARBEITEN ===== */
+const NEWS = [
+    {
+        version: "TikTok",
+        title: "Offizieller TikTok Account",
+        text: "This is the official and only TikTok account of Emergency Kiel",
+        color: "grey",
+        buttonText: "Besuche TikTok",
+        buttonLink: "https://www.tiktok.com/@emergencykieloffical"
+    },
+    {
+        version: "Beta",
+        title: "Website Beta",
+        text: "The Emergency Kiel Website is currently in Beta so Bugs can occur and nothing is 100% done!",
+        color: "orange"
+    }
+];
+
+/* ===== News Render ===== */
+function loadNews() {
+    const container = document.getElementById("news-container");
+    container.innerHTML = "";
+
+    NEWS.forEach(n => {
+        const div = document.createElement("div");
+        div.className = "news-item";
+        div.innerHTML = `
+            <div class="news-avatar" style="background:${n.color}">${n.version}</div>
+            <div class="news-content">
+                <p class="news-title">${n.title}</p>
+                <p class="news-text">${n.text}</p>
+            </div>
+            ${n.buttonText && n.buttonLink ? 
+                `<button class="news-button" onclick="window.open('${n.buttonLink}', '_blank')">${n.buttonText}</button>` 
+                : ''}
+        `;
+        container.appendChild(div);
+    });
+}
+
+/* ===== Load News on Page Load ===== */
+loadNews();
+</script>
+
+</body>
+</html>
